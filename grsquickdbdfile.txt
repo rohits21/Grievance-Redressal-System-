@@ -1,0 +1,120 @@
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+
+Depts
+-
+dept_id PK string
+dept_name string
+dept_head string
+
+emp
+-
+id PK int
+emp_id unique int
+name string
+designation string
+dept_id string FK >- Depts.dept_id
+scores int
+username string
+password string
+phone string
+
+admins
+-
+id PK int
+emp_id unique int
+name string
+desig string
+dept_id string FK >- Depts.dept_id
+username string
+password string
+
+students 
+-
+enrollno PK string
+name string
+branch string
+course string
+semester int
+username string
+password string
+phone string
+status string
+deactivated_by string
+
+compltdom
+-
+domid PK string
+domainname string
+totissues int
+totunresolved int
+faculty_coord_id int FK >- emp.emp_id
+
+complaints 
+-
+complaint_id PK int
+issue string
+desc string
+domid string FK >- compltdom.domid
+status string
+remarks string
+upvotes string
+dept_id string FK >- Depts.dept_id
+
+stucomp
+-
+id int PK
+comid int FK >- complaints.complaint_id
+studentid string FK >- students.enrollno
+
+
+
+
+
+
+
+
+
+
+
+
+# Customer
+# -
+# CustomerID PK int
+# Name string INDEX
+# Address1 string
+# Address2 NULL string
+# Address3 NULL string
+
+# Order
+# -
+# OrderID PK int
+# CustomerID int FK >- Customer.CustomerID
+# TotalAmount money
+# OrderStatusID int FK >- os.OrderStatusID
+
+# OrderLine as ol
+# ----
+# OrderLineID PK int
+# OrderID int FK >- Order.OrderID
+# ProductID int FK >- p.ProductID
+# Quantity int
+
+# # Table documentation comment 1 (try the PDF/RTF export)
+# Product as p # Table documentation comment 2
+# ------------
+# ProductID PK int
+# # Field documentation comment 1
+# # Field documentation comment 2 
+# Name varchar(200) UNIQUE # Field documentation comment 3
+# Price money
+
+# OrderStatus as os
+# ----
+# OrderStatusID PK int
+# Name UNIQUE string
+
+
+

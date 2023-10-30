@@ -1,0 +1,28 @@
+
+<%- include("partials/adminHeader") -%> 
+
+<%if(message.length > 0){ %>
+  <div class="alert alert-primary center" style="width: 350px; margin-bottom: 10px;" role="alert">
+    <%= message %>
+  </div>
+<% } %>
+
+<div class="newcomp-form center">
+
+    <form action = '/admin' method = 'post' class="form" style="margin: 20px 20px 20px 0px;">
+      
+          <legend >Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">Username(E-mail)</label>
+            <input name="loginEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="login-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input name="loginPassword" id="login-password" type="password" required>
+          </div>
+       
+        <button type="submit" class="btn-submit-comp" style="opacity: 100; margin-left: 70px;">Login</button>
+      </form>
+</div>
+
+<%- include("partials/footer") -%> 

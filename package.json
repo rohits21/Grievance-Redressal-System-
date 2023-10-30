@@ -1,0 +1,35 @@
+{
+  "name": "grs",
+  "description": "Grievance Redressal System",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pooja-Lohar25/GRS.git"
+  },
+  "author": "Pooja Lohar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pooja-Lohar25/GRS/issues"
+  },
+  "homepage": "https://github.com/Pooja-Lohar25/GRS#readme",
+  "scripts": {
+    "dev": "nodemon ./app/app.js"
+  },
+  "dependencies": {
+    "@mysql/xdevapi": "^8.0.32",
+    "bcrypt": "^5.1.0",
+    "deep-email-validator": "^0.1.21",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.1.0",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20",
+    "otp-generator": "^4.0.1",
+    "sequelize": "^6.28.0"
+  }
+}

@@ -1,0 +1,206 @@
+<%- include("partials/header") -%>
+
+<section class="forms-section">
+  <%if(message.length > 0){ %>
+  <div
+    class="alert alert-primary center"
+    style="width: 350px; margin-bottom: 10px"
+    role="alert"
+  >
+    <%= message %>
+  </div>
+  <% } %>
+  <div class="forms">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form
+        action="/student"
+        method="post"
+        class="form form-login"
+        style="background-color: black"
+      >
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">Username(E-mail)</label>
+            <input
+              name="loginEmail"
+              pattern="^[a-zA-Z0-9_.+-]+@(gmail|yahoo)\.com$|^[a-zA-Z0-9_.+-]+@sistec\.ac\.in$"
+              id="login-email"
+              type="email"
+              required
+            />
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input
+              name="loginPassword"
+              id="login-password"
+              type="password"
+              required
+            />
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      <form
+        action="/student/signup"
+        method="post"
+        class="form form-signup"
+        style="background-color: black"
+      >
+        <fieldset>
+          <legend>
+            Please, enter your email, password and password confirmation for
+            sign up.
+          </legend>
+          <div class="input-block">
+            <input
+              type="text"
+              class="form-control"
+              name="nameOfStudent"
+              placeholder="Name"
+              autocomplete="off"
+              required
+              pattern="^[a-zA-Z\s]+$"
+            />
+          </div>
+          <div class="input-block">
+            <input
+              type="text"
+              class="form-control"
+              name="enrollmentOfStudent"
+              placeholder="Enrollment No."
+              required
+              autocomplete="off"
+              pattern="^(0187|0537)(CS|ME|EC|EX|CE)\d{6}$"
+              oninput="this.value = this.value.toUpperCase()"
+            />
+          </div>
+
+          <input
+            type="radio"
+            id="bTech"
+            name="courseOfStudent"
+            value="B.Tech"
+          />
+          <label value="B.Tech">B.Tech</label>
+
+          <input
+            type="radio"
+            id="mba"
+            name="courseOfStudent"
+            value="MBA"
+            disabled
+          />
+          <label value="MBA">MBA</label>
+
+          <input
+            type="radio"
+            id="b.pharma"
+            name="courseOfStudent"
+            value="B.Pharma"
+            disabled
+          />
+          <label value="B.Pharma">B.Pharma</label>
+
+          <div class="input-block">
+            <select
+              id="br"
+              list="branch"
+              class="form-control"
+              name="branchOfStudent"
+              placeholder="Branch"
+            >
+              <option value="">--select--</option>
+              <option value="CSE">CSE</option>
+              <option value="ME">ME</option>
+              <option value="EX">EX</option>
+              <option value="EC">EC</option>
+              <option value="CE">CE</option>
+            </select>
+          </div>
+
+          <div class="input-block">
+            <select
+              type="text"
+              list="semester"
+              class="form-control"
+              name="semesterOfStudent"
+              placeholder="Semester"
+              required
+            >
+              <option value="">--select semester--</option>
+              <option value="1">First</option>
+              <option value="2">Second</option>
+              <option value="3">Third</option>
+              <option value="4">Fourth</option>
+              <option value="5">Fifth</option>
+              <option value="6">Sixth</option>
+              <option value="7">Seventh</option>
+              <option value="8">Eighth</option>
+            </select>
+          </div>
+
+          <ul>
+            <li>Must contain at least one number</li>
+            <li>One uppercase letter</li>
+            <li>One lowercase letter</li>
+            <li>At least 8 or more characters</li>
+          </ul>
+          <div class="intput-block">
+            <input
+              type="password"
+              id="student_password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              class="form-control"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="input-block">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password"
+              id="student_confirm_password"
+              required
+            />
+          </div>
+          <div class="input-block">
+            <input
+              type="email"
+              class="form-control"
+              pattern="^[a-zA-Z0-9_.+-]+@(gmail|yahoo)\.com$|^[a-zA-Z0-9_.+-]+@sistec\.ac\.in$"
+              id="email"
+              name="email"
+              placeholder="Username(E-mail)"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-block otp">
+            
+          </div>
+        </fieldset>
+        <button type="submit" id="subtn" class="btn-login">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") -%>

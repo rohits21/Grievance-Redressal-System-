@@ -1,0 +1,54 @@
+<%- include("partials/header") -%> 
+
+  <div class="newcomp-form center">
+
+    <a class="btn btn-primary" href = "/dashboard" style="margin-bottom: 20px;">Back</a>
+
+    <form class="form" action = "/student/newcomplaint" method = "post" style="margin-top: 20px;">
+      <%if(message.length > 0){ %>
+        <div class="alert alert-primary center" style="width: 350px; margin-bottom: 10px;" role="alert">
+          <%= message %>
+        </div>
+      <% } %>
+
+        <div><p>Register your compaint to be adressed</p></div>
+        <div class="input-block" style="margin-right:20px;">
+          <select name="domainOfComplaint" list="domain" class="form-control" placeholder="Domain of Complaint" required />
+            <option value="">Select Domain of Complaint</option>
+            <option value="LIB">Library</option>
+            <option value="MT">Maintenance</option>
+            <option value="AC">Academics</option>
+            <option value="TNP">Placement and Training</option>
+            <option value="MSCON">Misconduct</option>
+            <option value="RAG">Ragging</option>
+            <option value="OTH">Other</option>
+          </select>
+        </div>
+        <div class="input-block" style="margin-right:20px;">
+          <select id = "dept" list="dept" class="form-control" name="issuedToDept" placeholder="Issue for Department" required>
+            <option value="">Department to allocate issue</option>
+            <option value="CSE">CSE</option>
+            <option value="ME">ME</option>
+            <option value="EX">EX</option>
+            <option value="EC">EC</option>
+            <option value="CE">CE</option>
+          </select>
+        </div>
+        <div class="input-block" style="margin-right:20px;">
+          <input name="subjectOfComplaint" type="Text" class="form-control" placeholder="Subject" required/>
+        </div>
+        <div class="input-block" style="margin-right:20px;">
+          <textarea rows="3"
+          name="descriptionOfComplaint"
+            style="resize: none;"
+            class="form-control"
+            placeholder="Description" required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-comp" style="opacity: 100;">Submit</button>
+      </form>
+
+    </div>
+
+    <%- include("partials/footer") -%> 
