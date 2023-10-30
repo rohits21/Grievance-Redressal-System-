@@ -5,14 +5,14 @@
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pooja-Lohar25/GRS.git"
+    "url": ""
   },
   "author": "Rohit Sahu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Pooja-Lohar25/GRS/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Pooja-Lohar25/GRS#readme",
+  "homepage": "",
   "scripts": {
     "dev": "nodemon ./app/app.js"
   },
